@@ -22,11 +22,15 @@
     <p>
         <strong>Exemple :</strong>
     </p>
-    <pre class="brush: python">
-days_diff((1982, 4, 19), (1982, 4, 22)) == 3
+    {% if interpreter.slug == "js-node" %}
+  <pre class="brush: javascript">daysDiff((1982, 4, 19), (1982, 4, 22)) == 3
+daysDiff((2014, 1, 1), (2014, 8, 27)) == 238
+</pre>
+{% else %}
+  <pre class="brush: python">days_diff((1982, 4, 19), (1982, 4, 22)) == 3
 days_diff((2014, 1, 1), (2014, 8, 27)) == 238
-days_diff((2014, 8, 27), (2014, 1, 1)) == 238
-    </pre>
+</pre>
+{% endif %}
 </div>
 
 <p class="for_info_only">
