@@ -21,11 +21,11 @@
 </p> -->
 
 <p>
-    <strong>入力 </strong> 2つの日付が整数のタプルとして与えられる
+    <strong>入力</strong> 2つの日付が整数のタプルとして与えられる
 </p>
 
 <p>
-    <strong>出力 </strong> 2つの日付の差を整数として返します
+    <strong>出力</strong> 2つの日付の差を整数として返します
 </p>
 
 
@@ -33,31 +33,18 @@
     <p>
         <strong>例</strong>
     </p>
-    {% if interpreter.slug == "js-node" %}
-  <pre class="brush: javascript">daysDiff([1982, 4, 19], [1982, 4, 22]) == 3
-daysDiff([2014, 1, 1], [2014, 8, 27]) == 238
-</pre>
-{% else %}
-  <pre class="brush: python">days_diff((1982, 4, 19), (1982, 4, 22)) == 3
-days_diff((2014, 1, 1), (2014, 8, 27)) == 238
-</pre>
-{% endif %}
+    <pre class="brush: {% if is_js %}javascript{% else %}python{% endif %}">{{init_code_tmpl}}</pre>
 </div>
 
 <p class="for_info_only">
-    <strong>どのように使われるか </strong>
+    <strong>どのように使われるか</strong>
     Pythonはバッテリーが内蔵されています、このミッションでは完全なモジュールの使い方を学ぶ必要があり、車輪の再発明をする必要はありません。
-
-    <!-- <strong>How it is used: </strong>
-    Python has batteries included, so in this mission you will need to learn how to use completed modules so that you
-    don't have to invent the bicycle all over again. -->
 </p>
 
 <p>
     <strong>事前条件</strong>
-    日付は1年1月1日から9999年12月31日の間です。
-    日付は正しいです。
-    <!-- <strong>Precondition:</strong>
-    Dates between 1 january 1 and 31 december 9999.
-    Dates are correct. -->
+    <ul>
+        <li>日付は1年1月1日から9999年12月31日の間です。</li>
+        <li>日付は正しいです。</li>
+    </ul>
 </p>

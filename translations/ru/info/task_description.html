@@ -12,27 +12,19 @@
 </p>
 
 <p>
-    <strong>Входные данные: </strong> Две даты, как кортежи целых чисел.
+    <strong>Входные данные:</strong> Две даты, как кортежи целых чисел.
 </p>
 
 <p>
-    <strong>Выходные данные: </strong> Разница между датами в днях, как целое число.
+    <strong>Выходные данные:</strong> Разница между датами в днях, как целое число.
 </p>
 
 
 <div class="for_info_only">
     <p>
-        <strong>Примеры: </strong>
+        <strong>Примеры:</strong>
     </p>
-    {% if interpreter.slug == "js-node" %}
-  <pre class="brush: javascript">daysDiff([1982, 4, 19], [1982, 4, 22]) == 3
-daysDiff([2014, 1, 1], [2014, 8, 27]) == 238
-</pre>
-{% else %}
-  <pre class="brush: python">days_diff((1982, 4, 19), (1982, 4, 22)) == 3
-days_diff((2014, 1, 1), (2014, 8, 27)) == 238
-</pre>
-{% endif %}
+    <pre class="brush: {% if is_js %}javascript{% else %}python{% endif %}">{{init_code_tmpl}}</pre>
 </div>
 
 <p class="for_info_only">
@@ -44,6 +36,10 @@ days_diff((2014, 1, 1), (2014, 8, 27)) == 238
 
 <p>
     <strong>Предусловия:</strong>
-    Даты между 1 января 1 и 31 декабря 9999.
-    Даты корректны.
+    <ul>
+        <li>даты между 1 января 1 и 31 декабря 9999;</li>
+        <li>даты корректны.</li>
+    </ul>
+    
+    
 </p>

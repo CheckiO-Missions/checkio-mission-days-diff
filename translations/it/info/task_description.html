@@ -13,11 +13,11 @@
 </p>
 
 <p>
-    <strong>Input: </strong> Due date come tuple di interi.
+    <strong>Input:</strong> Due date come tuple di interi.
 </p>
 
 <p>
-    <strong>Output: </strong> La differenza in giorni tra le due date come numero intero.
+    <strong>Output:</strong> La differenza in giorni tra le due date come numero intero.
 </p>
 
 
@@ -25,25 +25,19 @@
     <p>
         <strong>Esempio:</strong>
     </p>
-    {% if interpreter.slug == "js-node" %}
-  <pre class="brush: javascript">daysDiff([1982, 4, 19], [1982, 4, 22]) == 3
-daysDiff([2014, 1, 1], [2014, 8, 27]) == 238
-</pre>
-{% else %}
-  <pre class="brush: python">days_diff((1982, 4, 19), (1982, 4, 22)) == 3
-days_diff((2014, 1, 1), (2014, 8, 27)) == 238
-</pre>
-{% endif %}
+    <pre class="brush: {% if is_js %}javascript{% else %}python{% endif %}">{{init_code_tmpl}}</pre>
 </div>
 
 <p class="for_info_only">
-    <strong>Come si usa: </strong>
+    <strong>Come si usa:</strong>
     Python ha le batterie incluse, quindi in questa missione imparerai come usare dei moduli
     affinch&eacute; tu non debba reinventare la ruota da zero.
 </p>
 
 <p>
     <strong>Prerequisiti:</strong>
-    Le date sono tra il 1 Gennaio 1 ed il 31 Dicembre 9999.
-    Le date sono valide.
+    <ul>
+        <li>le date sono tra il 1 Gennaio 1 ed il 31 Dicembre 9999;</li>
+        <li>le date sono valide.</li>
+    </ul>   
 </p>
