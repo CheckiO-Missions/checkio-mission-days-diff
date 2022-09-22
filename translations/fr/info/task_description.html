@@ -10,11 +10,11 @@
 </p>
 
 <p>
-    <strong>Entr&eacute;e : </strong> Deux dates en tant que tuple d'entiers.
+    <strong>Entr&eacute;e:</strong> Deux dates en tant que tuple d'entiers.
 </p>
 
 <p>
-    <strong>Sortie : </strong> La diff&eacute;rence entre ces deux dates en tant qu'entier.
+    <strong>Sortie:</strong> La diff&eacute;rence entre ces deux dates en tant qu'entier.
 </p>
 
 
@@ -22,26 +22,22 @@
     <p>
         <strong>Exemple :</strong>
     </p>
-    {% if interpreter.slug == "js-node" %}
-  <pre class="brush: javascript">daysDiff([1982, 4, 19], [1982, 4, 22]) == 3
-daysDiff([2014, 1, 1], [2014, 8, 27]) == 238
-</pre>
-{% else %}
-  <pre class="brush: python">days_diff((1982, 4, 19), (1982, 4, 22)) == 3
-days_diff((2014, 1, 1), (2014, 8, 27)) == 238
-</pre>
-{% endif %}
+<pre class="brush: {% if is_js %}javascript{% else %}python{% endif %}">{{init_code_tmpl}}</pre>
 </div>
 
 <p class="for_info_only">
-    <strong>&Agrave; quoi cela sert : </strong>
+    <strong>&Agrave; quoi cela sert:</strong>
     Python dispose d'une riche librairie standard. Dans cette mission, vous aurez besoin d'apprendre &agrave; utiliser 
     ces modules d&eacute;j&agrave; bien &eacute;prouv&eacute;s afin de ne pas avoir &agrave; r&eacute;inventer la roue.
 
 </p>
 
 <p>
-    <strong>Pr&eacute;condition :</strong>
-    Les dates sont entre le 1er janvier 1 et le 31 d&eacute;cembre 9999.
-    Les dates sont correctes.
+    <strong>Pr&eacute;condition:</strong>
+    <ul>
+        <li>les dates sont entre le 1er janvier 1 et le 31 d&eacute;cembre 9999;</li>
+        <li>les dates sont correctes.</li>
+    </ul>
+    
+    
 </p>

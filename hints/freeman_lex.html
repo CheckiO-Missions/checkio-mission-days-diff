@@ -1,0 +1,144 @@
+<body data-author="freeman_lex">
+<div class="question-answer">
+    <div class="question">
+        I have no idea how to start solving this mission
+    </div>
+    <div class="answer">
+        The general idea is to use build-in module <a target="_blank" href="https://docs.python.org/3/library/datetime.html">datetime</a>,  
+        convert these tuples into <a target="_blank" href="https://docs.python.org/3/library/datetime.html#date-objects">date()</a>
+        data type and find the difference between them as <a target="_blank" href="https://docs.python.org/3/library/datetime.html#timedelta-objects">timedelta()</a>
+        object.
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        What should I start from?
+    </div>
+    <div class="answer">
+        First of all import needed module and functions.
+        Next you can initialize dates hard way or with little trick since our
+        input tuples have the right order of numbers.
+    <br />
+    <br />
+        <pre class="brush: python">
+from datetime import date, timedelta       
+
+t = (2010, 2, 3)
+date(t[0], t[1], t[2]) # 3 february 2010
+# or
+date(*t) # * does unpacking values for sequence
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        I need some help to proceed with the mission
+    </div>
+    <div class="answer">
+        If you subtract dates, then you get timedelta data type.
+    <br />
+    <br />
+        <pre class="brush: python">
+from datetime import date, timedelta 
+
+f = date(2014, 12, 31) # 31 december 2014
+s = date(2011, 1, 1) # 1 january 2011
+f - s == datetime.timedelta(1460)        
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        But I need an integer. How to get it?
+    </div>
+    <div class="answer">
+        Just get "days" as an attribute of timedelta data type.
+        <br />
+        <br />
+        <pre class="brush: python">
+timedelta(5).days == 5
+(date(2014, 12, 31) - date(2011, 1, 1)).days == 1460
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        I am stuck. I need a small hint.
+    </div>
+    <div class="answer">
+        Don't forget - in our case the difference is non-negative. So use <a target="_blank" href="https://www.w3schools.com/python/ref_func_abs.asp">abs()</a> built-in function.
+        <br />
+        <br />
+        <pre class="brush: python">
+abs(5) == abs(-5) == 5
+(date(2011, 1, 1) - date(2014, 12, 31)).days == -1460
+abs((date(2011, 1, 1) - date(2014, 12, 31)).days) == 1460
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        So, how my final solution should look like?
+    </div>
+    <div class="answer">
+        Just wrap code inside function expression adn return aggregated expression.
+        Here is the solution:
+    <br />
+    <br />
+        <pre class="brush: python">
+from datetime import date
+
+
+def days_diff(a: tuple[int, int, int], b: tuple[int, int, int]) -> int:
+
+    return abs((date(*a)-date(*b)).days)
+        </pre>
+        Since this solution is short and simple, you may use lambda expression
+        (anonymous function) to write such functions more compact:
+        <br />
+        <br />
+        <pre class="brush: python">
+from datetime import date
+
+
+days_diff = lambda a, b: abs((date(*a)-date(*b)).days)
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Show me more solutions!<br />
+        'Cause I wanna be a real Python Ninnjaa!
+    </div>
+    <div class="answer">
+        Sure, grab it!<br />
+        This mission is possible to solve without using "butteries" - module datetime, 
+        only using calculations
+    <br />
+    <br />
+        <pre class="brush: python">
+def days_diff(date1, date2):
+
+    total = []
+    for date in [date1, date2]:
+        year = date[0]
+        month = date[1]
+        a = (14 - month)//12
+        y = year - a
+        dayN = date[2]+(153*(month + 12*a - 3)+2)//5 + 365*y + y//4 - y//100 + y//400
+        total.append(dayN)
+
+    return abs(total[0]-total[1])
+        </pre>
+        Click "Best solutions" in mission menu to get more interesting solutions!
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Thanks! I know and understand more now! Everything works fine!
+    </div>
+    <div class="answer">
+        Glad to hear it!
+    </div>
+</div>
+</body>
