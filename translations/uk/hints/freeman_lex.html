@@ -18,8 +18,8 @@
         Перш за все імпортуй необхідний модуль і функції.
         Потім ти можеш ініціалізувати дати у традиційний спосіб або використавши
         маленьку хитрість, оскільки наші вхідні кортежі мають правильний порядок чисел.
-    <br />
-    <br />
+        <br />
+        <br />
         <pre class="brush: python">
 from datetime import date, timedelta       
 
@@ -36,8 +36,8 @@ date(*t) # * розпаковує значення з послідовності
     </div>
     <div class="answer">
         Якщо ти знайдеш різницю таких дат, то отримаєш тип даних timedelta.
-    <br />
-    <br />
+        <br />
+        <br />
         <pre class="brush: python">
 from datetime import date, timedelta 
 
@@ -53,6 +53,8 @@ f - s == datetime.timedelta(1460)
     </div>
     <div class="answer">
         Просто отримай кількість днів як атрибут типу даних timedelta.
+        <br />
+        <br />
         <pre class="brush: python">
 timedelta(5).days == 5
 (date(2014, 12, 31) - date(2011, 1, 1)).days == 1460
@@ -65,6 +67,8 @@ timedelta(5).days == 5
     </div>
     <div class="answer">
         Не забудь - різниця завжди невід'ємна. Тож використай вбудовану функцію<a target="_blank" href="https://www.w3schools.com/python/ref_func_abs.asp">abs()</a>.
+        <br />
+        <br />
         <pre class="brush: python">
 abs(5) == abs(-5) == 5
 (date(2011, 1, 1) - date(2014, 12, 31)).days == -1460
@@ -79,8 +83,8 @@ abs((date(2011, 1, 1) - date(2014, 12, 31)).days) == 1460
     <div class="answer">
         Тобі лишилося обгорнути код у вираз функції і повернути агрегований вираз
         з урахуванням всіх попередніх підказок. Ось твоє рішення:
-    <br />
-    <br />
+        <br />
+        <br />
         <pre class="brush: python">
 from datetime import date
 
@@ -110,8 +114,8 @@ days_diff = lambda a, b: abs((date(*a)-date(*b)).days)
         Звісно, тримай!<br />
         Цю місію можливо розв'язати без використання "батарейок" - модулю datetime, 
         лише використовуючи розрахунки:
-    <br />
-    <br />
+        <br />
+        <br />
         <pre class="brush: python">
 def days_diff(date1, date2):
 
